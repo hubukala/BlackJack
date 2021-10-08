@@ -23,7 +23,7 @@ class Card():
 class Deck:
     
     def __init__(self):
-        self.deck = [] # starts with an empty list
+        self.deck = []
         for suit in suits:
             for rank in ranks:
                 self.deck.append(Card(suit,rank))
@@ -90,13 +90,13 @@ def hit(deck,hand):
     hand.adjust_for_ace()
     
 def hit_or_stand(deck,hand):
-    global playing  # to control an upcoming while loop
+    global playing
     
     while True:
         x = input("Would you like to Hit or Stand? Enter 'h' or 's' ")
         
         if x[0].lower() == 'h':
-            hit(deck,hand)  # hit() function defined above
+            hit(deck,hand)
 
         elif x[0].lower() == 's':
             print("Player stands. Dealer is playing.")
@@ -152,7 +152,7 @@ while True:
     dealer_hand.add_card(deck.deal())
     dealer_hand.add_card(deck.deal())
             
-    player_chips = Chips() # remember the default value is 100
+    player_chips = Chips()
     player_chips.total = int(input('how many chips you need?: '))
     
     take_bet(player_chips)
